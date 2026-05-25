@@ -58,14 +58,24 @@ function extractDominantColor(imageSrc, callback) {
     };
 }
 
+// Helper function to format "8K" to "₹8,000"
+function formatPrice(priceStr) {
+    if (!priceStr) return "Price on Request";
+    const num = parseFloat(priceStr.replace('K', '')) * 1000;
+    return `₹${num.toLocaleString('en-IN')}`;
+}
+
 // --- UI ENGINE ---
 function buildGallery(paintings) {
     const gallery = document.getElementById('gallery');
     
     paintings.forEach(painting => {
         const card = document.createElement('div');
-        card.className = 'painting-card';
+        card.className = 'painting-card'; // Starts hidden via CSS
         card.onclick = () => openModal(painting);
+
+        // Format the price using our new function
+        const displayPrice = formatPrice(painting.price);
 
         card.innerHTML = `
             <div class="image-wrapper">
@@ -74,17 +84,39 @@ function buildGallery(paintings) {
             </div>
             <div class="info">
                 <h3>${painting.title}</h3>
-                <p>₹${painting.price} | ${painting.dimensions}</p>
+                <p class="price-tag">${displayPrice}</p>
+                <p class="dim-tag">Dimensions: ${painting.dimensions}</p>
             </div>
         `;
         gallery.appendChild(card);
+    });
+
+    // Initialize Scroll Animations
+    setupScrollAnimations();
+}
+
+// Observer to reveal paintings as you scroll
+function setupScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100); 
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.painting-card').forEach(card => {
+        observer.observe(card);
     });
 }
 
 function openModal(painting) {
     currentPainting = painting;
     document.getElementById('modal-title').innerText = painting.title;
-    document.getElementById('modal-price').innerText = `₹${painting.price}`;
+    document.getElementById('modal-price').innerText = formatPrice(painting.price);
     document.getElementById('modal-dim').innerText = painting.dimensions;
     
     // Apply Reactive Glow

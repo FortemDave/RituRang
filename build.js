@@ -18,15 +18,13 @@ async function processImages() {
     for (const file of files) {
         const baseName = path.parse(file).name;
         
-        // 1. Pick a random background for this painting
+        // Pick a random background for this painting
         const bgFilename = backgrounds[Math.floor(Math.random() * backgrounds.length)];
         const bgConfig = spacesData[bgFilename];
         
-        // 2. Load and resize the painting to fit the wall box (keeping aspect ratio)
         const painting = sharp(path.join(rawDir, file));
         const metadata = await painting.metadata();
         
-        // Calculate scaling to fit within maxWidth/maxHeight of the wall
         const scale = Math.min(
             bgConfig.wall.maxWidth / metadata.width,
             bgConfig.wall.maxHeight / metadata.height
@@ -34,34 +32,27 @@ async function processImages() {
         const newWidth = Math.round(metadata.width * scale);
         const newHeight = Math.round(metadata.height * scale);
 
-        // 3. Create a subtle warm tint overlay using SVG
-        // This applies a 15% opacity color wash without destroying original colors
         const warmthOverlay = Buffer.from(
             `<svg width="${newWidth}" height="${newHeight}">
                 <rect x="0" y="0" width="${newWidth}" height="${newHeight}" fill="rgba(${bgConfig.ambientLight.warmth.r}, ${bgConfig.ambientLight.warmth.g}, ${bgConfig.ambientLight.warmth.b}, 0.15)" />
             </svg>`
         );
 
-        // 4. Apply Ambience Math & Compositing
         const processedPainting = await painting
             .resize(newWidth, newHeight)
             .modulate({
                 brightness: bgConfig.ambientLight.brightness,
                 saturation: bgConfig.ambientLight.saturation
             })
-            // Composite the warm tint layer over the painting
             .composite([{ input: warmthOverlay }])
-            // Add a matte (white border) and a frame (dark wood border)
-            .extend({ top: 20, bottom: 20, left: 20, right: 20, background: '#F5F5DC' }) // Matte
-            .extend({ top: 15, bottom: 15, left: 15, right: 15, background: '#3E2723' }) // Frame
+            .extend({ top: 20, bottom: 20, left: 20, right: 20, background: '#F5F5DC' })
+            .extend({ top: 15, bottom: 15, left: 15, right: 15, background: '#3E2723' })
             .toBuffer();
 
-        // 5. Calculate exact centering on the wall space
         const finalImageMeta = await sharp(processedPainting).metadata();
         const stampX = Math.round(bgConfig.wall.x + (bgConfig.wall.maxWidth - finalImageMeta.width) / 2);
         const stampY = Math.round(bgConfig.wall.y + (bgConfig.wall.maxHeight - finalImageMeta.height) / 2);
 
-        // 6. Composite onto the background and output
         const finalMockupPath = path.join(outputMockupDir, `${baseName}_mockup.webp`);
         
         await sharp(path.join(bgDir, bgFilename))
