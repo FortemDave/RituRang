@@ -17,6 +17,7 @@
     </button>
 
     <header class="hero">
+        <div class="diagonal-container" id="diagonal-box"></div>
         <div class="hero-content">
             <h1>Ritu Rang</h1>
             <p>Timeless Madhubani echoes of the Bhagavad Gita.</p>
@@ -27,18 +28,32 @@
     </header>
 
     <main id="gallery" class="gallery-container">
-    </main>
+        </main>
 
-    <footer>
-        <h2>Bring the Divine Home</h2>
-        <p>To acquire a piece from Ritu Rang, please place an inquiry below.</p>
-        
-        <div class="contact-info">
-            <p>Email: <a href="mailto:daveritu306@gmail.com">daveritu306@gmail.com</a></p>
-            <p>Phone/WhatsApp: <a href="tel:+918790526517">+91 8790526517</a></p>
+    <footer id="contact-section">
+        <div class="footer-content">
+            <div class="footer-text">
+                <h2>Bring the Divine Home</h2>
+                <p>To acquire a piece from Ritu Rang, please place an inquiry below.</p>
+                
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:daveritu306@gmail.com">daveritu306@gmail.com</a></p>
+                    <p>Phone/WhatsApp: <a href="tel:+918790526517">+91 8790526517</a></p>
+                </div>
+            </div>
+
+            <div class="inquiry-form-container">
+                <form id="inquiry-form" onsubmit="handleInquirySubmit(event)">
+                    <div class="form-row">
+                        <input type="text" id="form-name" placeholder="Your Name" required>
+                        <input type="text" id="form-contact" placeholder="Email or Phone Number" required>
+                    </div>
+                    <input type="text" id="form-painting-name" placeholder="Painting Name (Optional)">
+                    <textarea id="form-comments" placeholder="Your Message or Inquiry Details" rows="4" required></textarea>
+                    <button type="submit" class="order-btn" style="width: 100%;">Send Inquiry</button>
+                </form>
+            </div>
         </div>
-
-        <a href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform" target="_blank" class="order-btn">Place an Order / Inquiry</a>
     </footer>
 
     <div id="viewer-modal" class="modal">
@@ -74,6 +89,7 @@
             <div class="painting-details">
                 <h3 id="modal-title"></h3>
                 <p>Size: <span id="modal-dim"></span> | Investment: <span id="modal-price"></span></p>
+                <button class="inquire-modal-btn" onclick="prepareInquiry()">Inquire About This Piece</button>
             </div>
         </div>
     </div>
