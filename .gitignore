@@ -1,0 +1,13 @@
+# Ignore raw high-res images
+raw_images/
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore Mac/Windows system files
+.DS_Store
+Thumbs.db
+
+# Ignore your terminal dumps
+dump.txt
+dump.sh

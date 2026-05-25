@@ -1,0 +1,163 @@
+[
+  {
+    "id": "3_Piece_Radha_Krishna_Rukmini_22K_22x30",
+    "title": "3 Piece Radha Krishna Rukmini",
+    "price": "22K",
+    "dimensions": "22x30",
+    "image": "assets/paintings/3_Piece_Radha_Krishna_Rukmini_22K_22x30.webp"
+  },
+  {
+    "id": "4_Souls_Set_Individual_Available_8K_15x22",
+    "title": "4 Souls Set Individual Available",
+    "price": "8K",
+    "dimensions": "15x22",
+    "image": "assets/paintings/4_Souls_Set_Individual_Available_8K_15x22.webp"
+  },
+  {
+    "id": "Forest_Of_A_Thousand_Wings_18K_22x30",
+    "title": "Forest Of A Thousand Wings",
+    "price": "18K",
+    "dimensions": "22x30",
+    "image": "assets/paintings/Forest_Of_A_Thousand_Wings_18K_22x30.webp"
+  },
+  {
+    "id": "Gau_Madhav_22K_36x48",
+    "title": "Gau Madhav",
+    "price": "22K",
+    "dimensions": "36x48",
+    "image": "assets/paintings/Gau_Madhav_22K_36x48.webp"
+  },
+  {
+    "id": "Krishna_And_Yashoda_15K_22x30",
+    "title": "Krishna And Yashoda",
+    "price": "15K",
+    "dimensions": "22x30",
+    "image": "assets/paintings/Krishna_And_Yashoda_15K_22x30.webp"
+  },
+  {
+    "id": "Krishna_Janma_12K_22x30",
+    "title": "Krishna Janma",
+    "price": "12K",
+    "dimensions": "22x30",
+    "image": "assets/paintings/Krishna_Janma_12K_22x30.webp"
+  },
+  {
+    "id": "Krishna_Kaali_25K_22x30",
+    "title": "Krishna Kaali",
+    "price": "25K",
+    "dimensions": "22x30",
+    "image": "assets/paintings/Krishna_Kaali_25K_22x30.webp"
+  },
+  {
+    "id": "Krishna_Kaliya_8K_10x22",
+    "title": "Krishna Kaliya",
+    "price": "8K",
+    "dimensions": "10x22",
+    "image": "assets/paintings/Krishna_Kaliya_8K_10x22.webp"
+  },
+  {
+    "id": "Maa_Durga_10K_HALFIMPERIOR",
+    "title": "Maa Durga",
+    "price": "10K",
+    "dimensions": "HALFIMPERIOR",
+    "image": "assets/paintings/Maa_Durga_10K_HALFIMPERIOR.webp"
+  },
+  {
+    "id": "Maa_Sharda_2K_10x22",
+    "title": "Maa Sharda",
+    "price": "2K",
+    "dimensions": "10x22",
+    "image": "assets/paintings/Maa_Sharda_2K_10x22.webp"
+  },
+  {
+    "id": "Matsya_Raas_12K_22x30",
+    "title": "Matsya Raas",
+    "price": "12K",
+    "dimensions": "22x30",
+    "image": "assets/paintings/Matsya_Raas_12K_22x30.webp"
+  },
+  {
+    "id": "Matsya_Raas_8K_15x22",
+    "title": "Matsya Raas",
+    "price": "8K",
+    "dimensions": "15x22",
+    "image": "assets/paintings/Matsya_Raas_8K_15x22.webp"
+  },
+  {
+    "id": "Patta_Bhishek_22K_22x30",
+    "title": "Patta Bhishek",
+    "price": "22K",
+    "dimensions": "22x30",
+    "image": "assets/paintings/Patta_Bhishek_22K_22x30.webp"
+  },
+  {
+    "id": "Pushpak_Viman_22K_22x30",
+    "title": "Pushpak Viman",
+    "price": "22K",
+    "dimensions": "22x30",
+    "image": "assets/paintings/Pushpak_Viman_22K_22x30.webp"
+  },
+  {
+    "id": "Radha_Krishna_Raas_10K_15x22",
+    "title": "Radha Krishna Raas",
+    "price": "10K",
+    "dimensions": "15x22",
+    "image": "assets/paintings/Radha_Krishna_Raas_10K_15x22.webp"
+  },
+  {
+    "id": "Ram_Darbar_22K_22x30",
+    "title": "Ram Darbar",
+    "price": "22K",
+    "dimensions": "22x30",
+    "image": "assets/paintings/Ram_Darbar_22K_22x30.webp"
+  },
+  {
+    "id": "Reflection_8K_15x22",
+    "title": "Reflection",
+    "price": "8K",
+    "dimensions": "15x22",
+    "image": "assets/paintings/Reflection_8K_15x22.webp"
+  },
+  {
+    "id": "Shiv_Parvati_Kalyan_8K_15x22",
+    "title": "Shiv Parvati Kalyan",
+    "price": "8K",
+    "dimensions": "15x22",
+    "image": "assets/paintings/Shiv_Parvati_Kalyan_8K_15x22.webp"
+  },
+  {
+    "id": "Sita_In_Ashok_Vatika_10K_UNK",
+    "title": "Sita In Ashok Vatika",
+    "price": "10K",
+    "dimensions": "UNK",
+    "image": "assets/paintings/Sita_In_Ashok_Vatika_10K_UNK.webp"
+  },
+  {
+    "id": "Sita_Ravan_Samvad_(Ashok_Vatika)_12K_24x36",
+    "title": "Sita Ravan Samvad (Ashok Vatika)",
+    "price": "12K",
+    "dimensions": "24x36",
+    "image": "assets/paintings/Sita_Ravan_Samvad_(Ashok_Vatika)_12K_24x36.webp"
+  },
+  {
+    "id": "Tree_Of_Life_8K_10x22",
+    "title": "Tree Of Life",
+    "price": "8K",
+    "dimensions": "10x22",
+    "image": "assets/paintings/Tree_Of_Life_8K_10x22.webp"
+  },
+  {
+    "id": "Triphant_9K_15x22",
+    "title": "Triphant",
+    "price": "9K",
+    "dimensions": "15x22",
+    "image": "assets/paintings/Triphant_9K_15x22.webp"
+  },
+  {
+    "id": "Vishwa_Roop_40K_36x48",
+    "title": "Vishwa Roop",
+    "price": "40K",
+    "dimensions": "36x48",
+    "image": "assets/paintings/Vishwa_Roop_40K_36x48.webp"
+  }
+]

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritu Rang | Divine Madhubani Art</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Rozha+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <audio id="bg-music" loop preload="none">
+        <source src="Raga-Downtempo-Indian-Classical.mp3" type="audio/mpeg">
+    </audio>
+    
+    <button id="audio-toggle" class="audio-btn" onclick="toggleAudio()">
+        <span id="audio-icon">🔇</span> Music
+    </button>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Ritu Rang</h1>
+            <p>Timeless Madhubani echoes of the Bhagavad Gita.</p>
+            <button class="scroll-btn" onclick="startExperience()">
+                Explore the Collection ↓
+            </button>
+        </div>
+    </header>
+
+    <main id="gallery" class="gallery-container">
+        </main>
+
+    <footer>
+        <h2>Bring the Divine Home</h2>
+        <p>To acquire a piece from Ritu Rang, please place an inquiry below.</p>
+        
+        <div class="contact-info">
+            <p>Email: <a href="mailto:daveritu306@gmail.com">daveritu306@gmail.com</a></p>
+            <p>Phone/WhatsApp: <a href="tel:+918790526517">+91 8790526517</a></p>
+        </div>
+
+        <a href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform" target="_blank" class="order-btn">Place an Order / Inquiry</a>
+    </footer>
+
+    <div id="viewer-modal" class="modal">
+        <div id="modal-glow"></div> 
+
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-controls">
+                <button onclick="setMode('mockup')">View on Wall</button>
+                <button onclick="setMode('standalone')">View Painting Only</button>
+                <button onclick="setMode('ar')">AR View (Mobile)</button>
+            </div>
+            
+            <div id="mockup-view" class="view-area active">
+                <div class="mockup-wall">
+                    <div class="painting-frame" id="modal-painting">
+                        <div class="theft-overlay"></div>
+                        <img id="modal-image" src="" alt="Painting">
+                    </div>
+                </div>
+            </div>
+
+            <div id="ar-view" class="view-area">
+                <div style="position: relative; width: 100%; display: flex; justify-content: center; align-items: center;">
+                    <video id="camera-feed" autoplay playsinline style="display:none; width: 100%; max-height: 60vh; border-radius: 8px;"></video>
+                    <img id="ar-overlay-image" src="" style="display: none; position: absolute; max-width: 50%; max-height: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.5); pointer-events: none;">
+                </div>
+                
+                <p id="ar-instructions">To view, grant camera permissions.</p>
+                <button class="order-btn" id="start-camera-btn" onclick="startCamera()" style="margin-top:20px;">Launch Camera</button>
+            </div>
+
+            <div class="painting-details">
+                <h3 id="modal-title"></h3>
+                <p>Size: <span id="modal-dim"></span> | Investment: <span id="modal-price"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

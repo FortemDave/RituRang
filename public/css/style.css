@@ -1,0 +1,221 @@
+:root {
+    --bg-color: #FAF6F0; 
+    --text-main: #2C1810; 
+    --accent: #D35400; 
+    --font-heading: 'Rozha One', serif;
+    --font-ui: 'Outfit', sans-serif;
+    --glow-color: rgba(255, 255, 255, 0.1); /* Default neutral */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-ui);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    user-select: none; 
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(250, 246, 240, 0.9), rgba(250, 246, 240, 0.9)), url('../assets/pattern.png');
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    margin: 0;
+    color: var(--accent);
+}
+
+/* Modernized Buttons */
+.scroll-btn, .order-btn {
+    background: linear-gradient(135deg, #D35400, #A04000);
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font-ui);
+    cursor: pointer;
+    border-radius: 50px; 
+    box-shadow: 0 8px 20px rgba(211, 84, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.scroll-btn:hover, .order-btn:hover { 
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(211, 84, 0, 0.5);
+}
+
+.scroll-btn:active, .order-btn:active {
+    transform: translateY(1px);
+}
+
+/* Floating Audio Button */
+.audio-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(250, 246, 240, 0.9);
+    border: 1px solid #ddd;
+    color: var(--text-main);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: var(--font-ui);
+    cursor: pointer;
+    z-index: 50;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    transition: transform 0.2s;
+}
+
+.audio-btn:hover { transform: scale(1.05); }
+
+/* Gallery Grid */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 60px;
+}
+
+.painting-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.painting-card:hover { transform: translateY(-5px); }
+
+/* Anti-Theft Wrapper */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.theft-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 10;
+}
+
+.image-wrapper img {
+    width: 100%;
+    display: block;
+    pointer-events: none; 
+}
+
+.info { margin-top: 15px; text-align: center; }
+.info h3 { font-family: var(--font-heading); margin: 0; font-size: 1.5rem; }
+.info p { margin: 5px 0; color: #666; }
+
+/* Modal & Mockup Engine */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Reactive Glow Layer */
+#modal-glow {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at center, var(--glow-color) 0%, rgba(0,0,0,0.95) 70%);
+    transition: background 0.8s ease; 
+}
+
+.modal-content {
+    background: transparent;
+    width: 90%; max-width: 1000px;
+    height: 80vh;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: none;
+}
+
+.close-btn {
+    position: absolute; top: 10px; right: 20px;
+    font-size: 2rem; cursor: pointer; z-index: 110;
+    color: white;
+}
+
+.modal-controls {
+    display: flex; justify-content: center; gap: 20px; padding: 20px;
+}
+
+.modal-controls button {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-ui);
+}
+
+.modal-controls button:hover { background: rgba(255,255,255,0.2); }
+
+.view-area {
+    flex-grow: 1;
+    display: none;
+    justify-content: center; align-items: center;
+    overflow: hidden;
+    color: white;
+}
+.view-area.active { display: flex; }
+
+/* The View Container */
+.mockup-wall {
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The Image Wrapper */
+.painting-frame {
+    position: relative;
+    max-width: 90%; 
+    max-height: 90%;
+}
+
+.painting-frame img {
+    max-width: 100%; 
+    max-height: 70vh; 
+    object-fit: contain;
+    display: block; 
+    pointer-events: none;
+}
+
+.painting-details { padding: 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); color: white; }
+
+footer { text-align: center; padding: 60px; background: #2C1810; color: #FAF6F0; }
+
+.contact-info {
+    margin: 30px 0;
+    font-size: 1.1rem;
+}
+.contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+.contact-info a:hover { text-decoration: underline; }

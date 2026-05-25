@@ -1,0 +1,41 @@
+{
+  "1.png": {
+    "wall": {
+      "x": 289,
+      "y": 36,
+      "maxWidth": 550,
+      "maxHeight": 815
+    },
+    "ambientLight": {
+      "brightness": 1.0,
+      "saturation": 1.0,
+      "warmth": { "r": 255, "g": 255, "b": 255 }
+    }
+  },
+  "2.png": {
+    "wall": {
+      "x": 274,
+      "y": 126,
+      "maxWidth": 552,
+      "maxHeight": 734
+    },
+    "ambientLight": {
+      "brightness": 0.95,
+      "saturation": 1.15,
+      "warmth": { "r": 255, "g": 240, "b": 215 }
+    }
+  },
+  "3.png": {
+    "wall": {
+      "x": 170,
+      "y": 328,
+      "maxWidth": 619,
+      "maxHeight": 664
+    },
+    "ambientLight": {
+      "brightness": 1.0,
+      "saturation": 1.0,
+      "warmth": { "r": 255, "g": 255, "b": 255 }
+    }
+  }
+}
